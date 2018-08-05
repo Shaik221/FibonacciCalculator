@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FibonacciListActivity">
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Number"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/emptyElement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="The list is empty"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/number" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/number"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/totalTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:text="Total Time:"
+        app:layout_constraintTop_toBottomOf="@id/listView"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="24sp"
+        android:id="@+id/totalTime"
+        android:hint="ms"
+        app:layout_constraintBaseline_toBaselineOf="@id/totalTimeText"
+        app:layout_constraintLeft_toRightOf="@id/totalTimeText"
+        app:layout_constraintTop_toBottomOf="@id/listView" />
+
+    <!--  Frame Layout for placing Fragments  -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
